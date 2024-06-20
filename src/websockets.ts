@@ -6,6 +6,8 @@ import { Ship } from "./gamelogic/Ship";
 import { logger } from "./logger";
 import { Position } from "./gamelogic/Types";
 
+dotenv.config();
+
 export function startWebSocketConnection(server: any) {
   const io = new Server(server, { cors: { origin: "*" } });
 
