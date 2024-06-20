@@ -6,8 +6,13 @@ import { Ship } from "./gamelogic/Ship";
 import { logger } from "./logger";
 import { Position } from "./gamelogic/Types";
 
-export function startWebSocketConnection(server: any) {
-  const io = new Server(server, { cors: { origin: "*" } });
+export function startWebSocketConnection(server) {
+  const io = new Server(server, {
+    cors: {
+      origin: "https://3.71.51.4", // Ihre Frontend-URL
+      methods: ["GET", "POST"]
+    }
+  });
   console.log("WebSocket server started");
 
   io.on("connection", (socket: any) => {
